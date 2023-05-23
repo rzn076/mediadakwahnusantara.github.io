@@ -1,42 +1,46 @@
-function playM3u8(url, license){                        
- var player = new Clappr.Player({                 
-                    source: url,
-                    parentId: '#player',
-                    preload: 'auto',
-                    autoPlay: 'true',
-                    width: '100%',
-                    height: '100%',
-                    fullscreenEnabled:'true',
-                    hideMediaControl: 'false',
-                    plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback],
-           
-                    chromecast: {
-                      appId: '9DFB77C0',
-                      media: {
-                        type: ChromecastPlugin.Movie,
-                        title: 'Player HLS - DASH',
-                      },
-                  },
+function playM3u8(url, license) {
+    var player = new Clappr.Player({
+        source: url,
+        parentId: '#player',
+        preload: 'auto',
+        autoPlay: 'true',
+        poster: ' ',
+        position: 'bottom-right',
+        watermark: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAnUmB1Mtihxt1svpMPZclS8Hjn2KaymYa_ObtnpXbMO0_5jKNOs9z1INoVYuHxk7eEgNduLL7auMwjnKL5iBHcp5WOLJ2t7grYOyDuR7TVeq9rvF3iTIE313zOYaAHS5p-yPngdqTcWOKgjl2yWEAyvyp5kTa27OwmVjA_EUo_6hLQW3nvwBKlG18tg/s1600/WWW.OKSTREAM.XYZ.png",
+        player_watermark_link: "https://www.okstream.xyz/p/live-streaming.html",
+        width: '100%',
+        height: '100%',
+        fullscreenEnabled: 'true',
+        hideMediaControl: 'false',
+        plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback],
 
-                    shakaConfiguration: {
-                    preferredAudioLanguage: 'en-US',
-                    drm: {
-                    servers: {
+        chromecast: {
+            appId: '9DFB77C0',
+            media: {
+                type: ChromecastPlugin.Movie,
+                title: 'Player HLS - DASH',
+            },
+        },
+
+        shakaConfiguration: {
+            preferredAudioLanguage: 'en-US',
+            drm: {
+                servers: {
                     'com.widevine.alpha': license
-                             }
-                         },
-                    streaming: {
-                      rebufferingGoal: 15
-                    }
-                  },
-                  shakaOnBeforeLoad: function(shaka_player) {
-                    // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-                  },
+                }
+            },
+            streaming: {
+                rebufferingGoal: 15
+            }
+        },
+        shakaOnBeforeLoad: function(shaka_player) {
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+        },
 
-                });
+    });
 
-  document.title = "Watching: " +url;
-    
+    document.title = "Watching: " + url;
+
 }
 
 playM3u8(window.location.href.split("#")[1], window.location.href.split("=")[1])
