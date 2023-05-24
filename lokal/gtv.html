@@ -2,51 +2,53 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.statically.io/gh/minozotv/migitv2/15c42b26/migistyle.css">
-    <link href="https://cdn.statically.io/gh/minozotv/migitv2/15c42b26/jarak.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.2.1/shaka-player.compiled.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.2.1/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/shaka-player/4.2.1/controls.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yustianti89i/pp@main/12.js"></script>
-    <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 
-<body style="background:#000000;">
-
-    <div style="clear:both;"></div>
-    <div class="embed-responsive embed-responsive-21by9">
-        <div class="embed-responsive-item" id="player"></div>
-    </div>
+<body>
+    <div id="player"></div>
 
     <script type="text/javascript">
         var player = new Clappr.Player({
-            source: 'https://nxanv-live-cdn.mncnow.id/live/eds/GTV-HD/sa_dash_vmx/GTV-HD.mpd',
+            source: 'https://nyanv-live-cdn.mncnow.id/live/eds/GTV-HD/sa_dash_vmx/GTV-HD.mpd',
+            mimeType: 'application/dash+xml',
             height: '100%',
             width: '100%',
-            autoPlay: 'true',
             poster: ' ',
-            position: 'bottom-right',
-
-            watermark: " ",
-            player_watermark_link: " ",
-            plugins: [DashShakaPlayback, LevelSelector],
+            watermark: '',
+            position: 'Bottom-right',
+            autoPlay: true,
+            mediacontrol: {
+                seekbar: "#ffffff",
+                buttons: "#ff0000 ",
+            },
+            plugins: [DashShakaPlayback, LevelSelector, ChromecastPlugin],
+            chromecast: {
+                appId: '9DFB77C0',
+                contentType: 'video/mp4',
+            },
             shakaConfiguration: {
                 drm: {
                     clearKeys: {
                         '88f6c7cbd793374cb5f12d7e26dcd63b': 'e82daa7c7bfb03d99327463fdbd37336'
-
                     }
                 },
-                preferredAudioLanguage: 'en-US',
+                preferredAudioLanguage: 'pt-BR',
             },
             shakaOnBeforeLoad: function(shaka_player) {},
             parentId: '#player'
         });
     </script>
-
 </body>
 
 </html>
