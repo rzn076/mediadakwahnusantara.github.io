@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.4.1/shaka-player.compiled.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.4.1/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/shaka-player/4.4.1/controls.css">
+
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div id="player"></div>
+
+    <script type="text/javascript">
+        var player = new Clappr.Player({
+            source: 'https://nyanv-live-cdn.mncnow.id/live/eds/MNCSports3-HD/sa_dash_vmx/MNCSports3-HD.mpd',
+            mimeType: 'application/dash+xml',
+            height: '100%',
+            width: '100%',
+            poster: ' ',
+            watermark: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBTN7YgVuirottaZC2YFzU5r7UIeNwBsd7rHnz555MyS2_FAoHE5l9qHBdS0xtKldc8NUI3NT9SNTZrfGqwIDf2yCZKi7tU88Kb2gpBTyXP-u1zSo742-cCm5UwKy7bS7MoP8seWUIVU_28rYCD1IcIPVFuUObSsnYW99idpH9m0J__hiIAaOANPIh/s1600/watermar%20pediamu.png',
+            position: 'Bottom-right',
+            autoPlay: true,
+            mediacontrol: {
+                seekbar: "#ffffff",
+                buttons: "#ffa500",
+            },
+            plugins: [DashShakaPlayback, LevelSelector, ChromecastPlugin],
+            chromecast: {
+                appId: '9DFB77C0',
+                contentType: 'video/mp4',
+            },
+            shakaConfiguration: {
+                drm: {
+                    clearKeys: {
+                        'fadd2720deff5925ab86df0819cd7775': 'f67ff08c7ebc779f6a6fcfc83835f65b'
+                    }
+                },
+                preferredAudioLanguage: 'pt-BR',
+            },
+            shakaOnBeforeLoad: function(shaka_player) {},
+            parentId: '#player'
+        });
+    </script>
+</body>
+
+</html>
