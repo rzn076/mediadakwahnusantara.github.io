@@ -43,8 +43,6 @@
         }
 
         var get = getParameterByName('get');
-        var key = getParameterByName('key');
-        var key2 = getParameterByName('key2');
         var getIMG = getParameterByName('img');
     </script>
     <div id="player"></div>
@@ -58,12 +56,6 @@
                     "default": false,
                     "type": "application/vnd.apple.mpegurl",
                     "file": atob(get),
-                    "drm": {
-                        "clearkey": {
-                            "keyId": atob(key),
-                            "key": atob(key2)
-                        }
-                    },
                     "label": "0"
                 }]
             }],
