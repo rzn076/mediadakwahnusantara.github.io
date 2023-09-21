@@ -1,0 +1,7 @@
+#KODIPROP:inputstream.adaptive.stream_headers=X-Forwarded-For=103.231.188.124
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"d4b4f0d5d67af4b22fc1ce132b120d7b", "kid":"10e5bb610ec526f43b506bd4820595fe" } ], "type":"temporary" }
+#EXTINF:-1 tvg-id="XXX" tvg-name="" group-title="JIOTV" group-logo="" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_HD.png",Colors HD
+https://spotvalive.akamaized.net/a96f2ab13f584ce2bb72bfa069c1aa49/ap-northeast-1/6271486521001/playlist.mpd
