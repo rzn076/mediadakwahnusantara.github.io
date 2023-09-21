@@ -1,3 +1,4 @@
+#EXTM3U
 #KODIPROP:inputstream.adaptive.stream_headers=X-Forwarded-For=103.231.188.124
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
