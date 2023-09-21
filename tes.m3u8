@@ -1,4 +1,3 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="FoxSports1.us" tvg-logo="https://i.postimg.cc/8PNRNJ9y/20220927-063709.png" group-title="Olahraga",Fox Sports 1
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=929819,RESOLUTION=960x540
 https://livecdn.rumsport.com/stream/45/index.m3u8|referer=https://bingsport.tv/
